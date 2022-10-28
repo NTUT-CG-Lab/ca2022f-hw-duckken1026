@@ -225,7 +225,7 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>3</td>
           <td>綁定參數 (ParamAngleX、ParamAngleY、ParamAngleZ)</td>
         </tr>
@@ -297,18 +297,6 @@
 
     if (d3.select("#myCheckbox4").property("checked")){
       score += parseInt(d3.select('#m4').html());   
-    }
-
-    if (d3.select("#myCheckbox5").property("checked")){
-      score += parseInt(d3.select('#m5').html());   
-    }
-
-    if (d3.select("#myCheckbox6").property("checked")){
-      score += parseInt(d3.select('#m6').html());   
-    }
-
-    if (d3.select("#myCheckbox7").property("checked")){
-      score += parseInt(d3.select('#m7').html());   
     }
 
     d3.select("#myTotal").html(score);    
