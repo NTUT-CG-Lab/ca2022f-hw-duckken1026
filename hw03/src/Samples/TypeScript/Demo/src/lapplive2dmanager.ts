@@ -182,6 +182,10 @@ export class LAppLive2DManager {
       model.baseX = this.baseX;
       model.baseY = this.baseY;
 
+      //特殊參數
+      model.specifyValue = this.specifyValue;
+      model.specifyId =this.specifyId;
+
       if (model.getModel()) {
         if (model.getModel().getCanvasWidth() > 1.0 && width < height) {
           // 横に長いモデルを縦長ウィンドウに表示する際モデルの横サイズでscaleを算出する
@@ -303,4 +307,7 @@ export class LAppLive2DManager {
   public baseX:number=0;
   public baseY:number=0;
 
+  //特殊參數
+  public specifyValue:number=0;
+  public specifyId:string="";
 }

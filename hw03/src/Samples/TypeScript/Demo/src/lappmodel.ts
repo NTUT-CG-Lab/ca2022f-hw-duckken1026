@@ -515,6 +515,7 @@ export class LAppModel extends CubismUserModel {
     this._model.setParameterValueById(this._idParamBaseX, this.baseX);
     this._model.setParameterValueById(this._idParamBaseY, this.baseY);
 
+    this._model.setParameterValueById(CubismFramework.getIdManager().getId(this.specifyId), this.specifyValue);
     // まばたき
     if (!motionUpdated) {
       if (this._eyeBlink != null) {
@@ -1169,6 +1170,10 @@ export class LAppModel extends CubismUserModel {
   public bustY:number=0;
   public baseX:number=0;
   public baseY:number=0;
+
+  //特殊參數
+  public specifyValue:number=0;
+  public specifyId:string="";
 
   _motionSounds: Map<string, any>;
 }

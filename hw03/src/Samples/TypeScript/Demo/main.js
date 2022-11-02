@@ -1,16 +1,17 @@
 document.querySelector('.Sliders').addEventListener('change', e => {
-  setParam(e);
+  setParam(e,false);
 });
 
 document.querySelector('.regularParam').addEventListener('change', e => {
-  setParam(e);
+  setParam(e,false);
 });
 
 document.querySelector('.specifyParam').addEventListener('change', e => {
-  setParam(e);
+  setParam(e,true);
 });
 
-function setParam(event){
+
+function setParam(event,isSpecifyParam){
   let val = parseFloat(event.target.value);
   let id = event.target.id;
   runModel(view => {
@@ -59,7 +60,11 @@ function setParam(event){
     view.baseX = 0;
     view.baseY = 0;
     //特殊參數
-    //if (id === 'ParamFaceInkOn') view.faceInkOn = val;
+    if(isSpecifyParam == true)
+    {
+      view.specifyId = id;
+      view.specifyValue = val;
+    }
   });
 }
 
@@ -153,7 +158,7 @@ function addOptionToSelect(jsonFile){  //增加選項至下拉式選單
   regularParamName.innerText = regularSelector.options[regularSelector.value].text;//匯入json檔後預設選中的參數要顯示在畫面上
   regularSlider.setAttribute('id',regularSelector.options[regularSelector.value].text);//設定regularSlider的id
   specifyParamName.innerText = specifySelector.options[specifySelector.value].text;//匯入json檔後預設選中的參數要顯示在畫面上
-  specifySlider.setAttribute('id',specifySelector.options[specifySelector.value].text);//設定regularSlider的id
+  specifySlider.setAttribute('id',specifySelector.options[specifySelector.value].text);//設定specifySlider的id
 }
 
 function findElementIsInList(element,List){   //尋找此元素是否在陣列中

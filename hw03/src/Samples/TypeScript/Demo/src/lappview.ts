@@ -156,6 +156,9 @@ export class LAppView {
     live2DManager.baseX = this.baseX;
     live2DManager.baseY = this.baseY;
 
+    //特殊參數
+    live2DManager.specifyValue = this.specifyValue;
+    live2DManager.specifyId = this.specifyId;
 
     live2DManager.onUpdate();
   }
@@ -361,4 +364,7 @@ export class LAppView {
   public baseX:number=0;
   public baseY:number=0;
 
+  //特殊參數
+  public specifyValue:number=0;
+  public specifyId:string="";
 }
