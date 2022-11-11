@@ -195,7 +195,8 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <h1>作業 01</h1>
+      <h1>作業 06</h1>
+      <input type="button" name="back" onclick="parent.location='./src/index.html'" value="...按我...按我...按我...">
     </div>
   </div>
 
@@ -224,7 +225,7 @@
           <th>分項描述</th>
         </tr>
         <tr>
-          <td rowspan="7" id="myTotal"></td>
+          <td rowspan="5" id="myTotal"></td>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
           <td id='m1'>1</td>
           <td>描述</td>
@@ -246,17 +247,7 @@
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox5" checked="checked" ></td>
-          <td id='m5'>2</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox6" checked="checked" /></td>
-          <td id='m6'>2</td>
-          <td>描述</td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox7" checked="checked" /></td>
-          <td id='m7'>2</td>
+          <td id='m5'>6</td>
           <td>描述</td>
         </tr>
       </table>
@@ -316,14 +307,6 @@
 
     if (d3.select("#myCheckbox5").property("checked")){
       score += parseInt(d3.select('#m5').html());   
-    }
-
-    if (d3.select("#myCheckbox6").property("checked")){
-      score += parseInt(d3.select('#m6').html());   
-    }
-
-    if (d3.select("#myCheckbox7").property("checked")){
-      score += parseInt(d3.select('#m7').html());   
     }
 
     d3.select("#myTotal").html(score);    
